@@ -39,15 +39,15 @@ CREATE TABLE transactions (
 
 -- Table user_connections
 CREATE TABLE user_connections (
-  user_id BIGINT NOT NULL,
+  user_id    BIGINT NOT NULL,
   contact_id BIGINT NOT NULL,
   PRIMARY KEY (user_id, contact_id),
   KEY fk_userconnections_user_idx (user_id),
   KEY fk_userconnections_contact_idx (contact_id),
   CONSTRAINT fk_userconnections_user FOREIGN KEY (user_id)
     REFERENCES users (id)
-    ON DELETE NO ACTION ON UPDATE NO ACTION,
+    ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT fk_userconnections_contact FOREIGN KEY (contact_id)
     REFERENCES users (id)
-    ON DELETE NO ACTION ON UPDATE NO ACTION
+    ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB;
