@@ -4,8 +4,8 @@
 
 ### Table `users`
 - id : BIGINT, clé primaire, auto-incrémentée, NOT NULL
-- username : VARCHAR(50), unique, NOT NULL
-- email : VARCHAR(255), unique, NOT NULL
+- username : VARCHAR(50), UNIQUE, NOT NULL
+- email : VARCHAR(255), UNIQUE, NOT NULL
 - password : VARCHAR(255), NOT NULL
 
 ### Table `transactions`
