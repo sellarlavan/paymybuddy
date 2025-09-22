@@ -2,6 +2,8 @@
 
 # Modèle Physique de Données
 
+## Tables
+
 ### Table `users`
 - id : BIGINT, clé primaire, auto-incrémentée, NOT NULL
 - username : VARCHAR(50), UNIQUE, NOT NULL
@@ -19,5 +21,7 @@
 - user_id : BIGINT, clé étrangère vers users(id), NOT NULL
 - contact_id : BIGINT, clé étrangère vers users(id), NOT NULL
 - clé primaire composée : (user_id, contact_id)
+
+## Diagramme
 
 ![Modèle Physique de Données](docs/mpd.png)
