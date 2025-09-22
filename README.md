@@ -19,3 +19,5 @@
 - user_id : BIGINT, clé étrangère vers users(id), NOT NULL
 - contact_id : BIGINT, clé étrangère vers users(id), NOT NULL
 - clé primaire composée : (user_id, contact_id)
+
+![Modèle Physique de Données](docs/mpd.png)
