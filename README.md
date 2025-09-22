@@ -2,8 +2,6 @@
 
 # Modèle Physique de Données
 
-## Tables
-
 ### Table `users`
 - id : BIGINT, clé primaire, auto-incrémentée, NOT NULL
 - username : VARCHAR(50), unique, NOT NULL
