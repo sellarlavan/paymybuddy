@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS paymybuddydb
   DEFAULT CHARACTER SET utf8mb4
   DEFAULT COLLATE utf8mb4_unicode_ci;
-USE mydb;
+USE paymybuddydb;
 
 -- Supprime les tables si elles existent déjà
 DROP TABLE IF EXISTS user_connections;
