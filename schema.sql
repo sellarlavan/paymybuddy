@@ -23,8 +23,8 @@ CREATE TABLE users (
 -- Table transactions
 CREATE TABLE transactions (
   id BIGINT NOT NULL AUTO_INCREMENT,
-  sender_id BIGINT NULL,
-  receiver_id BIGINT NULL,
+  sender_id BIGINT NOT NULL,
+  receiver_id BIGINT NOT NULL,
   description VARCHAR(255),
   amount DECIMAL(12,2) NOT NULL,
   PRIMARY KEY (id),
@@ -32,10 +32,12 @@ CREATE TABLE transactions (
   KEY fk_transactions_receiver_idx (receiver_id),
   CONSTRAINT fk_transactions_sender FOREIGN KEY (sender_id)
     REFERENCES users (id)
-    ON DELETE SET NULL ON UPDATE CASCADE,
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE,
   CONSTRAINT fk_transactions_receiver FOREIGN KEY (receiver_id)
     REFERENCES users (id)
-    ON DELETE SET NULL ON UPDATE CASCADE
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
 -- Table user_connections
