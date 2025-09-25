@@ -4,7 +4,11 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.math.BigDecimal;
 
 @Entity
 @Table(
@@ -13,13 +17,10 @@ import lombok.*;
                 @UniqueConstraint(name = "uq_users_username", columnNames = "username"),
                 @UniqueConstraint(name = "uq_users_email", columnNames = "email")
         })
-
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Users {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -40,5 +41,6 @@ public class Users {
     @Column(nullable = false, length = 255)
     private String password;
 
-
+    @Column(nullable = false)
+    private BigDecimal balance = BigDecimal.ZERO;
 }

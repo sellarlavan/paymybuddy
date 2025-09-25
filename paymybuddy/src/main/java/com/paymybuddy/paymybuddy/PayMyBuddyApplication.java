@@ -1,6 +1,5 @@
 package com.paymybuddy.paymybuddy;
 
-import com.paymybuddy.paymybuddy.model.Users;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,9 +13,6 @@ public class PayMyBuddyApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Users u = new Users();
-		u.setEmail("hello@gmail.com");
 
-		System.out.println(u.getUsername());
 	}
 }
