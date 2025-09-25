@@ -15,12 +15,18 @@ public class UsersService {
     private final PasswordEncoder passwordEncoder;
 
     public Users getUserById(Long id){
-        return usersRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Utilisateur introuvable"));
+        return usersRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Utilisateur introuvable."));
     }
 
     public Users saveUser(Users user){
         return usersRepository.save(user);
     }
+
+    public Users getUserByEmail(String email) {
+        return usersRepository.findByEmail(email)
+                .orElseThrow(() -> new IllegalArgumentException("Utilisateur introuvable."));
+    }
+
 
     public Users register(Users user){
         if(usersRepository.existsByUsername(user.getUsername())){
