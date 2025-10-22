@@ -14,7 +14,8 @@ PayMyBuddy est une application permettant à des particuliers de s'envoyer de l'
 
 **Base de données:**
 
-mysql -u root -p < chemin/script.sql
+Lancer le script SQL se trouvant dans le répertoire resources.  
+mysql -u root -p < chemin/schema.sql
 
 **Variables d'environnement :**
 
