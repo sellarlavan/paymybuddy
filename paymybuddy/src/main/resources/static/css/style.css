@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+body.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 60px 50px;
+    max-width: 420px;
+    width: 100%;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    background-color: #f5a623;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-wrapper {
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input::placeholder {
+    color: #828282;
+    font-weight: bold;
+}
+
+input:focus {
+    border: 1px solid #207FEE;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #207FEE;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.navbar {
+    background-color: white;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav-menu li a:hover {
+    color: #207FEE;
+}
+
+.nav-menu li a.active {
+    color: #207FEE;
+}
+
+.main-content {
+    padding: 60px 20px;
+    min-height: calc(100vh - 180px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-relation-section {
+    text-align: left;
+}
+
+.section-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.search-form {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.inline-form {
+    flex-direction: row;
+}
+
+.success-message,
+.error-message {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    min-height: 30px;
+}
+
+.success-message p {
+    color: green;
+    font-size: 16px;
+    margin: 0;
+}
+
+.error-message p {
+    color: red;
+    font-size: 16px;
+    margin: 0;
+}
+
+.main-content > div:not(.profile-section):not(.add-relation-section) {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    min-height: 30px;
+}
+
+.search-input {
+    flex: 1;
+    max-width: 350px;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #828282;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-input:focus {
+    border: 1px solid #207FEE;
+    outline: none;
+}
+
+.add-btn {
+    background-color: #f5a623;
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #e69516;
+}
+
+.profile-section {
+    text-align: left;
+}
+
+.profile-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+.profile-item:last-of-type {
+    margin-bottom: 30px;
+}
+
+.profile-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    min-width: 120px;
+}
+
+.profile-input {
+    font-size: 16px;
+    color: #666;
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 5px;
+}
+
+.profile-input:focus {
+    outline: none;
+    border-bottom: 1px solid #207FEE;
+}
+
+.profile-arrow {
+    font-size: 20px;
+    color: #ccc;
+}
+
+.transfer-main {
+    padding: 60px 20px;
+    min-height: calc(100vh - 180px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.transfer-form {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.transfer-main > div:not(.transactions-section) {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.transfer-main > div:not(.transactions-section) p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.transfer-select,
+.transfer-description,
+.transfer-amount-input {
+    padding: 18px 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #333;
+    background-color: white;
+}
+
+.transfer-select {
+    min-width: 320px;
+}
+
+.transfer-description {
+    min-width: 400px;
+}
+
+.transfer-amount-input {
+    width: 150px;
+    text-align: center;
+}
+
+.transfer-select:focus,
+.transfer-description:focus,
+.transfer-amount-input:focus {
+    border: 1px solid #207FEE;
+    outline: none;
+}
+
+.transfer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.pay-btn {
+    background-color: #207FEE;
+    color: white;
+    padding: 18px 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pay-btn:hover {
+    background-color: #1a6ac9;
+}
+
+.transactions-section {
+    margin-top: 60px;
+}
+
+.transactions-container {
+    border: 1px solid #e0e0e0;
+    background-color: white;
+}
+
+.transactions-title {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    padding: 20px 20px 10px 20px;
+    font-weight: bold;
+}
+
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: none;
+}
+
+.transactions-table thead {
+    background-color: white;
+}
+
+.transactions-title-header {
+    padding: 20px 20px 5px 20px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.transactions-table th {
+    padding: 5px 20px 15px 20px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.transactions-table th:last-child {
+    text-align: right;
+}
+
+.transactions-table td {
+    padding: 20px;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.transactions-table td:last-child {
+    text-align: right;
+}
+
+.transactions-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.amount-negative {
+    color: red;
+    font-weight: bold;
+}
+
+.amount-positive {
+    color: green;
+    font-weight: bold;
+}
