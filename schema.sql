@@ -54,3 +54,22 @@ CREATE TABLE user_connections (
     REFERENCES users (id)
     ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB;
+
+-- Création de deux utilisateurs et des relations
+SET @encoded_password = '$2a$10$P0v6MsZRepcNUXZOD2BA2.IJBL35XokZCIPfMHllOYGFoD/X/d07a';
+
+-- Insertion des utilisateurs
+INSERT INTO users (username, email, password, balance)
+VALUES 
+  ('user1', 'user1@gmail.com', @encoded_password, 1000.00),
+  ('user2', 'user2@gmail.com', @encoded_password, 1000.00);
+
+-- Insertion des relations
+INSERT INTO user_connections (user_id, contact_id)
+SELECT u1.id, u2.id FROM users u1, users u2 
+WHERE u1.email = 'user1@gmail.com' AND u2.email = 'user2@gmail.com';
+
+INSERT INTO user_connections (user_id, contact_id)
+SELECT u2.id, u1.id FROM users u1, users u2 
+WHERE u1.email = 'user1@gmail.com' AND u2.email = 'user2@gmail.com';
+
