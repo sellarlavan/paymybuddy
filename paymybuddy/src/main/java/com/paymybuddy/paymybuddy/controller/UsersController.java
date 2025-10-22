@@ -1,24 +1,28 @@
 package com.paymybuddy.paymybuddy.controller;
 
-import com.paymybuddy.paymybuddy.model.Users;
-import com.paymybuddy.paymybuddy.service.UsersService;
+import com.paymybuddy.paymybuddy.dto.UserRegistrationDTO;
+import com.paymybuddy.paymybuddy.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/api/users")
+@Controller
 @RequiredArgsConstructor
 public class UsersController {
 
-    private final UsersService usersService;
+    private final UserService userService;
+
+    @GetMapping("/register")
+    public String showRegisterForm(Model model) {
+        model.addAttribute("user", new UserRegistrationDTO());
+        return "register";
+    }
 
     @PostMapping("/register")
-    public ResponseEntity<Users> register(@RequestBody Users user){
-        Users registeredUser = usersService.register(user);
-        return ResponseEntity.ok(registeredUser);
+    public String processRegistration(@ModelAttribute("user") UserRegistrationDTO dto) {
+        userService.register(dto);
+        return "redirect:/login";
     }
+
 }

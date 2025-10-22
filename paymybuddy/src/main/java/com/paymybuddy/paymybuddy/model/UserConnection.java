@@ -9,25 +9,25 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserConnections {
+public class UserConnection {
 
     @EmbeddedId
-    private UserConnectionsId id;
+    private UserConnectionId id;
 
     @ManyToOne
     @MapsId("userId")
     @JoinColumn(name = "user_id", nullable = false)
-    private Users user;
+    private User user;
 
     @ManyToOne
     @MapsId("contactId")
     @JoinColumn(name = "contact_id", nullable = false)
-    private Users contact;
+    private User contact;
 
 
-    public UserConnections(Users user, Users contact) {
+    public UserConnection(User user, User contact) {
         this.user = user;
         this.contact = contact;
-        this.id = new UserConnectionsId(user.getId(), contact.getId());
+        this.id = new UserConnectionId(user.getId(), contact.getId());
     }
 }

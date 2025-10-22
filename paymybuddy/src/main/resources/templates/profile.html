@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pay My Buddy - Profil</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Pay My Buddy</div>
+    <ul class="nav-menu">
+      <li><a th:href="@{/transfert}">Transférer</a></li>
+      <li><a th:href="@{/profile}" class="active">Profil</a></li>
+      <li><a th:href="@{/connection}">Ajouter relation</a></li>
+      <li><a th:href="@{/logout}">Se déconnecter</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <form class="profile-section" th:action="@{/profile}" th:object="${user}" method="post">
+      <div class="profile-item">
+        <label class="profile-label">Username</label>
+        <input type="text" class="profile-input" th:field="*{username}">
+        <span class="profile-arrow">›</span>
+      </div>
+
+      <div class="profile-item">
+        <label class="profile-label">Mail</label>
+        <input type="email" class="profile-input" th:field="*{email}">
+        <span class="profile-arrow">›</span>
+      </div>
+
+      <div class="profile-item">
+        <label class="profile-label">Mot de passe</label>
+        <input type="password" class="profile-input" th:field="*{password}" placeholder="mot de passe">
+        <span class="profile-arrow">›</span>
+      </div>
+
+      <button type="submit" class="add-btn">Modifier</button>
+    </form>
+
+    <div th:if="${param.success}" class="success-message">
+      <p>Profil mis à jour avec succès.</p>
+    </div>
+
+    <div th:if="${error}" class="error-message">
+      <p th:text="${error}"></p>
+    </div>
+  </main>
+</body>
+</html>

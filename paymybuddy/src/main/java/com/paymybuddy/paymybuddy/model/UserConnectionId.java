@@ -14,7 +14,7 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserConnectionsId implements Serializable {
+public class UserConnectionId implements Serializable {
 
     private Long userId;
     private Long contactId;
@@ -22,7 +22,7 @@ public class UserConnectionsId implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof UserConnectionsId that)) return false;
+        if (!(o instanceof UserConnectionId that)) return false;
         return Objects.equals(userId, that.userId) &&
                 Objects.equals(contactId, that.contactId);
     }

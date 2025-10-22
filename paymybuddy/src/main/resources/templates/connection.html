@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pay My Buddy - Ajouter relation</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Pay My Buddy</div>
+    <ul class="nav-menu">
+      <li><a th:href="@{/transfert}">Transférer</a></li>
+      <li><a th:href="@{/profile}">Profil</a></li>
+      <li><a th:href="@{/connection}" class="active">Ajouter relation</a></li>
+      <li><a th:href="@{/logout}">Se déconnecter</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="add-relation-section">
+      <h2 class="section-title">Chercher une relation</h2>
+
+      <form class="search-form inline-form" th:action="@{/connection/add}" method="post">
+        <input type="email" name="contactEmail" placeholder="Saisir une adresse mail" class="search-input" required>
+        <button type="submit" class="add-btn">Ajouter</button>
+      </form>
+
+      <div th:if="${success}" class="success-message">
+        <p th:text="${success}" class="success"></p>
+      </div>
+
+      <div th:if="${error}" class="error-message">
+        <p th:text="${error}" class="error"></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
