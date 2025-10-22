@@ -22,6 +22,15 @@ setx DB_URL "jdbc:mysql://localhost:3306/db"
 setx DB_USER "user"  
 setx DB_PASSWORD "password"
 
+**Lancement de l'application et test**
+
+L'application se lance avec le fichier PayMyBuddyApplication. Deux utilisateurs de test sont créés, ainsi qu'une relation permettant des envois d'argent:  
+Email: user1@gmail.com  
+Mot de passe: password  
+
+Email: user2@gmail.com  
+Mot de passe: password  
+
 # Modèle Physique de Données
 
 ## Tables
