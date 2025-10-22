@@ -1,5 +1,27 @@
 # paymybuddy
 
+PayMyBuddy est une application permettant à des particuliers de s'envoyer de l'argent facilement et en toute sécurité.
+
+# Installation
+
+## Prérequis
+
+- Java 21+
+- MySQL 8+
+- Maven
+
+## Configuration
+
+**Base de données:**
+
+mysql -u root -p < chemin/script.sql
+
+**Variables d'environnement :**
+
+setx DB_URL "jdbc:mysql://localhost:3306/db"  
+setx DB_USER "user"  
+setx DB_PASSWORD "password"
+
 # Modèle Physique de Données
 
 ## Tables
